@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+<head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="icon" type="image/x-icon" href="https://i.etsystatic.com/11979725/r/il/425b9a/1431687786/il_570xN.1431687786_w5a8.jpg">
+      <title>Payment-Scrummy Park</title>
+<style>
+        .html{
+              font-size: 62.5%;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+        }
+        .navbar{
+            box-shadow: 0px 5px 10px 0px #aaa;
+            overflow: hidden;
+            width: 100%;
+            background: #91dfc1;
+            color: #000;
+            opacity: 0.85;
+            height: 50px;
+            font-size: 17px;
+        }
+
+        .navbar a{
+            padding: 13px;
+            color: black;
+            text-align: center;
+            text-decoration: none;
+            float: left;
+            transition: .2s;    
+        }
+
+        .menubar{
+            float: left;
+            overflow: hidden;
+        }
+
+        .ddlbtn{
+            font-size: 17px;  
+            border: none;
+            outline: none;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: "Poppins", sans-serif;
+            margin: 0;
+            color: #000;
+            opacity: 0.95;
+            transition: .2s;
+        }
+
+        .navbar a:hover, .ddlbtn:hover{
+            color: white;
+            background-color: black;
+        } 
+
+        .ddl-items{
+            padding: 13px 16px;
+            background-color: #91dfc1;
+            display: none;
+            color: black;
+            font-family:  "Poppins", sans-serif;
+            position: absolute;
+            box-shadow: 0 10px 13px 0 rgba(0, 0, 0, 0.5);
+        }
+
+        .ddl-items a{
+            padding: 13px;
+            background-color: #91dfc1;
+            color: black;
+            text-align: center;
+            text-decoration: none;
+            float: left;
+            transition: .2s;
+        }
+
+        .ddl-items a:hover{
+            background-color: black;
+            color:white;
+        }
+
+        .menubar:hover .ddl-items{
+            display: block;
+        }
+        
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .row {
+            display: -ms-flexbox; /* IE10 */
+            display: flex;
+            -ms-flex-wrap: wrap; /* IE10 */
+            flex-wrap: wrap;
+            margin: 0 -16px;
+        }
+
+        .col-25 {
+            -ms-flex: 25%; 
+            flex: 25%;
+        }
+
+        .col-50 {
+          -ms-flex: 50%; 
+          flex: 50%;
+        }
+
+        .col-75 {
+          -ms-flex: 75%;
+          flex: 75%;
+        }
+
+        .col-25, .col-50, .col-75 {
+           padding: 0 16px;
+        }
+
+        .container {
+            background-color: #f2f2f2;
+            padding: 5px 20px 15px 20px;
+            border: 1px solid lightgrey;
+            border-radius: 3px;
+        }
+
+        input[type=text] {
+            width: 100%;
+            margin-bottom: 20px;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        input[type=number] {
+            width: 100%;
+            margin-bottom: 20px;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        label {
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .icon-container {
+            margin-bottom: 20px;
+            padding: 7px 0;
+            font-size: 24px;
+        }
+  
+
+        .btn {
+            background-color: #04AA6D;
+            color: white;
+            padding: 12px;
+            margin: 10px 0;
+            border: none;
+            width: 100%;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 17px;
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+        }
+
+        a {
+            color: #2196F3;
+        }
+
+        hr {
+            border: 1px solid lightgrey;
+        }
+
+        span.price {
+            float: right;
+            color: grey;
+        }
+
+        @media (max-width: 800px) {
+          .row {
+            flex-direction: column-reverse;
+          }
+          .col-25 {
+            margin-bottom: 20px;
+          }
+        }
+</style>
+</head>
+<body>
+  <script>
+        
+        document.addEventListener("DOMContentLoaded",function () {
+        let total = localStorage.getItem('amount');
+        document.getElementById("price").innerHTML = "&#8377 "+total;
+        
+        });
+       
+  </script>
+  <header>
+    <div class="navbar">
+            <a href="Home.html">Home</a>
+            <a href="About.html">About</a>
+            <div class="menubar">
+                <button class="ddlbtn">Cuisine</button>
+                    <div class="ddl-items">
+                        <a href="Chinese.html">Chinese</a><br><hr width="100%">
+                        <a href="Japanese.html">Japanese</a><br><hr width="100%">
+                        <a href="Korean.html">Korean</a><br><hr width="100%">
+                    </div>
+            </div>
+            <div class="menubar">
+                <button class="ddlbtn">Menu Card</button>
+                    <div class="ddl-items">
+                        <a href="Breakfast.html">Breakfast</a><br><hr width="100%">
+                        <a href="Lunch.html">Lunch</a><br><hr width="100%">
+                        <a href="Snacks.html">Snacks</a><br><hr width="100%">
+                        <a href="Dinner.html">Dinner</a><br>
+                    </div>
+            </div>
+            <a href="Reservation.html">Table resevation</a><br>
+    </div>
+    </header>
+    <br>
+<div class="background-image">
+<div class="row">
+  <div class="col-75">
+    <div class="container">
+      <form action="pay1.php" method="POST" autocomplete="off">
+      
+        <div class="row">
+          <div class="col-50">
+            <h3>Address to be printed in the bill</h3>
+            <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+            <input type="text" id="fname" name="firstname" placeholder="Full name" required>
+            <label for="email"><i class="fa fa-envelope"></i> Email</label>
+            <input type="text" id="email" name="email" placeholder="Email" required>
+            <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+            <input type="text" id="adr" name="address" placeholder="Room No., Street name" required>
+            <label for="city"><i class="fa fa-institution"></i> City</label>
+            <input type="text" id="city" name="city" placeholder="City" required>
+
+            <div class="row">
+              <div class="col-50">
+                <label for="state">State</label>
+                <input type="text" id="state" name="state" placeholder="State" required>
+              </div>
+              <div class="col-50">
+                <label for="zip">Pincode</label>
+                <input type="number" id="Pincode" name="Pincode" placeholder="NNNNNN" required>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-50">
+            <h3>Payment</h3>
+            <label for="fname">Accepted Cards</label>
+            <div class="icon-container">
+              <i class="fa fa-cc-visa" style="color:navy;"></i>
+              <i class="fa fa-cc-mastercard" style="color:red;"></i>
+            </div>
+            <label for="cname">Name on Card</label>
+            <input type="text" id="cname" name="cardname" placeholder="Name on card" required>
+            <label for="ccnum">Credit card number</label>
+            <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444" required>
+            <label for="expmonth">Exp Month</label>
+            <input type="number" id="expmonth" name="expmonth" placeholder="Month" required>
+            <div class="row">
+              <div class="col-50">
+                <label for="expyear">Exp Year</label>
+                <input type="number" id="expyear" name="expyear" placeholder="yyyy" required>
+              </div>
+              <div class="col-50">
+                <label for="cvv">CVV</label>
+                <input type="number" id="cvv" name="cvv" placeholder="cvv" required>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        <input type="submit" value="Continue to checkout" class="btn">
+      </form>
+    </div>
+  </div>
+  <div class="col-25">
+    <div class="container">
+      <p>Total <span class="price" id="price" style="color:black"></span></p>
+    </div>
+  </div>
+</div>
+<br><br><br><br><Br><Br>
+</div>
+
+
+</body>
+</html>
+

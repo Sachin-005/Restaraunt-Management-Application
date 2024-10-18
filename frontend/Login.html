@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/x-icon" href="https://i.etsystatic.com/11979725/r/il/425b9a/1431687786/il_570xN.1431687786_w5a8.jpg">
+	<title>Login-Scrummy Park</title>
+	<style>
+		body{
+	background-image: url('https://i.postimg.cc/wT3TQS3V/header-image2.jpg');
+	background-repeat: no-repeat;
+	background-size: 120%;
+}
+form{
+	background-color: rgb(222, 213, 213);
+	font-family: "Poppins", sans-serif;
+	padding: 90px;
+	width: 400px;
+	text-align: left;
+	margin: 400px;
+	margin-top: 10%;
+	margin-left: 32%;
+	border-radius: 30px;
+	margin-bottom: 10%;
+	
+}
+label{
+	font-family: "Poppins", sans-serif;;
+	font-size: 15px;
+	
+}
+.b{
+	padding: 10px; 
+	border-radius:10%;
+	background-color: royalblue; 
+	color:white; 
+	text-align:center;
+}
+body {
+            font-family: "Poppins", sans-serif;
+        }
+        
+.navbar{
+            box-shadow: 0px 5px 10px 0px #aaa;
+            overflow: hidden;
+            width: 100%;
+            background: #91dfc1;
+            color: #000;
+           
+            height: 50px;
+            font-size: 17px;
+        }
+
+        .navbar a{
+            padding: 13px;
+            color: black;
+            text-align: center;
+            text-decoration: none;
+            float: left;    
+        }
+
+        .menubar{
+            float: left;
+            overflow: hidden;
+        }
+
+        .ddlbtn{
+            font-size: 17px;  
+            border: none;
+            outline: none;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: "Poppins", sans-serif;
+            margin: 0;
+             color: #000;
+            opacity: 0.95;
+            
+        }
+
+        .navbar a:hover, .ddlbtn:hover{
+            background-color: black;
+            color: white;
+        } 
+
+        .ddl-items{
+            padding: 13px 16px;
+            background-color: #91dfc1;
+            display: none;
+            color: black;
+            font-family:  "Poppins", sans-serif;
+            position: absolute;
+            box-shadow: 0 10px 13px 0 rgba(0, 0, 0, 0.5);
+        }
+
+        .ddl-items a{
+            padding: 13px;
+            background-color: #91dfc1;
+            color: black;
+            text-align: center;
+            text-decoration: none;
+            float: left;
+        }
+
+        .ddl-items a:hover, .ddlbtn:hover{
+            color:white;
+            background-color: black;
+        }
+
+        .menubar:hover .ddl-items{
+            display: block;
+        }
+	</style>
+</head>
+<body>
+
+	<form action="login1.php" method="POST">
+			<h2 style="color: rgb(37, 37, 38); font-family: Poppins, sans-serif;text-align: center; font-size: 30px;font-style:italic;">The Scrummy Park</h2>
+			<label for="email"><b>Enter email address</b></label><br><br>
+			<input type="email" name="email" placeholder="Email" size="30px">
+			<br><br>
+			<label for="password"><b>Enter Password</b></label><br><br>
+			<input type="password" name="password" placeholder="Password" size="30px">  
+			<br><br>
+			<button class="b" style="text-align: center;">Login</button><br>
+			<h4>Don't have an account?</h4><a href="Signup.html" class="signup">Sign up</a> 
+	</form>
+</body>
+</html>

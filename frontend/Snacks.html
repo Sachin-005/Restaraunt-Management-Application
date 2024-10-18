@@ -1,0 +1,336 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" type="image/x-icon" href="https://i.etsystatic.com/11979725/r/il/425b9a/1431687786/il_570xN.1431687786_w5a8.jpg">
+        <title>Snacks</title>
+    </head>
+    <style>
+        .html {
+              font-size: 62.5%;
+            }
+
+        body {
+            font-family: "Poppins", sans-serif;
+        }
+        
+        .background{
+            background-image: url("https://thumbs.dreamstime.com/b/guilty-snacks-seamless-background-various-44792247.jpg");
+            opacity: 100%;
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+
+        .navbar{
+            box-shadow: 0px 5px 10px 0px #aaa;
+            overflow: hidden;
+            width: 100%;
+            background: #91dfc1;
+            color: #000;
+            
+            height: 50px;
+            font-size: 17px;
+        }
+
+        .navbar a{
+            padding: 13px;
+            color: black;
+            text-align: center;
+            text-decoration: none;
+            float: left;    
+        }
+
+        .menubar{
+            float: left;
+            overflow: hidden;
+        }
+
+        .ddlbtn{
+            font-size: 17px;  
+            border: none;
+            outline: none;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: "Poppins", sans-serif;
+            margin: 0;
+             color: #000;
+            opacity: 0.95;
+            
+        }
+
+        .navbar a:hover, .ddlbtn:hover{
+            background-color: black;
+            color: white;
+        } 
+
+        .ddl-items{
+            padding: 13px 16px;
+            background-color: #91dfc1;
+            display: none;
+            color: black;
+            font-family:  "Poppins", sans-serif;
+            position: absolute;
+            box-shadow: 0 10px 13px 0 rgba(0, 0, 0, 0.5);
+        }
+
+        .ddl-items a{
+            padding: 13px;
+            background-color: #91dfc1;
+            color: black;
+            text-align: center;
+            text-decoration: none;
+            float: left;
+        }
+
+        .ddl-items a:hover, .ddlbtn:hover{
+            color:white;
+            background-color: black;
+        }
+
+        .menubar:hover .ddl-items{
+            display: block;
+        }
+        .submit{
+                background-color: rgb(164, 164, 214);
+                color: black;
+                font-size: 20px;
+                padding: 7px;
+                font-family: italian;
+                border-radius: 3px;
+                margin-left: 680px;
+        }  
+        .reset{
+                background-color: rgb(164, 164, 214);
+                color: black;
+                font-size: 20px;
+                padding: 7px;
+                font-family: italian;
+                margin-left: 710px;
+                border-radius: 3px;
+        } 
+        .submit:hover{
+                background-color: rgb(164, 164, 214);
+                color: black;
+                transform: scale(1.2);
+                font-size: 20px;
+                padding: 7px;
+                font-family: italian;
+                border-radius: 3px;
+                margin-left: 680px;
+        }
+        .reset:hover{
+                background-color: rgb(164, 164, 214);
+                color: black;
+                transform: scale(1.2);
+                font-size: 20px;
+                padding: 7px;
+                font-family: italian;
+                margin-left: 710px;
+                border-radius: 3px;
+        }
+
+           
+        table{
+               background-color: rgb(164, 164, 214);
+               margin-left: auto;
+               margin-right: auto;
+               margin-top: auto;
+        }
+        td{
+               font-family: Italian;
+               font-size: 25px;
+               color: rgb(14, 14, 14); 
+               padding: 3px;  
+               width: 20%;
+               text-align: center;               
+        }
+        th{
+               font-size: 30px;
+               color: rgb(112, 85, 85);
+               
+        }
+        .name{
+                margin-left: auto;
+                margin-right: auto;
+                padding-top: 7px;
+                padding-bottom: 0.1px;
+                color: black;
+                background-color: rgb(164,164,214);
+                text-align: center;
+                border: 2.5px;
+                border-radius: 4px;
+                width: 300px;
+        }   
+    </style>
+    
+    <body>
+        <script>
+        function find_total(){
+            var snacks_total = 0;
+            var maggi = document.getElementById("Maggi");
+            var sandwich= document.getElementById("Sandwich");
+            var icecream = document.getElementById("Icecream");
+            var donut = document.getElementById("Donut");
+            var french_Fries = document.getElementById("French_Fries");
+            var burger = document.getElementById("Burger");
+            var pastry= document.getElementById("Pastry");
+            var enoodles = document.getElementById("Enoodles");
+
+            if(maggi.checked == true){
+                snacks_total += 25*(document.getElementById("maggi").value);
+            }
+            if(sandwich.checked == true){
+                snacks_total += 140*(document.getElementById("sandwich").value);
+            }
+            if(icecream.checked == true){
+                snacks_total += 100*(document.getElementById("icecream").value);
+            }
+            if(donut.checked == true){
+                snacks_total += 70*(document.getElementById("donut").value);
+            }
+            if(french_Fries.checked == true){
+                snacks_total += 145*(document.getElementById("french_Fries").value);
+            }
+            if(burger.checked == true){
+                snacks_total += 100*(document.getElementById("burger").value);
+            }
+            if(pastry.checked == true){
+                snacks_total += 85*(document.getElementById("pastry").value);
+            }
+             if(enoodles.checked == true){
+                snacks_total += 40*(document.getElementById("enoodles").value);
+            }
+            document.getElementById("disp_total").innerHTML = "&#8377 "+snacks_total;
+            localStorage.setItem("amount",snacks_total);
+        }
+
+        function reset(){
+            document.getElementById("maggi").value = "";
+            document.getElementById("sandwich").value = "";
+            document.getElementById("icecream").value = "";
+            document.getElementById("donut").value = "";
+            document.getElementById("french_Fries").value = "";
+            document.getElementById("burger").value = "";
+            document.getElementById("pastry").value = "";
+            document.getElementById("enoodles").value = "";
+
+            document.getElementById("Maggi").checked = false;
+            document.getElementById("Sandwich").checked = false;
+            document.getElementById("Icecream").checked = false;
+            document.getElementById("Donut").checked = false;
+            document.getElementById("French_Fries").checked = false;
+            document.getElementById("Burger").checked = false;
+            document.getElementById("Pastry").checked = false;
+            document.getElementById("Enoodles").checked = false;
+             document.getElementById("disp_total").innerHTML="";
+        }
+    </script>
+        <header>
+            <div class="navbar">
+                    <a href="Home.html">Home</a>
+                    <a href="About.html">About</a>
+                    <div class="menubar">
+                        <button class="ddlbtn">Cuisine</button>
+                            <div class="ddl-items">
+                                <a href="Chinese.html">Chinese</a><br><hr width="100%">
+                                <a href="Japanese.html">Japanese</a><br><hr width="100%">
+                                <a href="Korean.html">Korean</a><br><hr width="100%">
+                            </div>
+                    </div>
+                    <div class="menubar">
+                        <button class="ddlbtn">Menu Card</button>
+                            <div class="ddl-items">
+                                <a href="Breakfast.html">Breakfast</a><br><hr width="100%">
+                                <a href="Lunch.html">Lunch</a><br><hr width="100%">
+                                <a href="Snacks.html">Snacks</a><br><hr width="100%">
+                                <a href="Dinner.html">Dinner</a><br>
+                            </div>
+                    </div>
+                    <a href="Reservation.html">Table resevation</a><br>
+            </div>
+            </header>
+    <br>
+    <div class="background"><br><br>
+        <img src="https://i.etsystatic.com/11979725/r/il/425b9a/1431687786/il_570xN.1431687786_w5a8.jpg" 
+        height="200px" style="border-radius: 50%;; display: block; margin-left: auto; margin-right: auto; height:15%;width: 17%;"> 
+        <br><br>
+    <div class= "tableBorder">
+        <form action="snacks1.php" method="POST">
+            <p class="name">Enter your name:
+                <input type="text" name="name" id="name" required><br><br></p>
+    <table>
+        <tr>
+           
+            <td style="color: #000; text-decoration: underline;">Items</td>
+            <td style="color: #000;text-decoration: underline">Amount</td>
+            <td style="color: #000;text-decoration: underline">Quantity</td>
+        </tr>
+        <tr>
+            <th colspan="3" style="font-style: italic;">Snacks</th>
+        </tr>
+        <tr>
+            <td>Maggi</td>
+            <td>&#8377 25 <input type="checkbox" value="Maggi" name="snacks[]" id="Maggi"></td>
+            <td><input type="number" id="maggi" min="0"></td>
+        </tr>
+        <tr>
+            <td>Sandwich</td>
+            <td>&#8377 140 <input type="checkbox"  name="snacks[]" value="Sandwich" id="Sandwich"></td>
+            <td><input type="number" id="sandwich" min="0"></td>
+        </tr>
+        <tr>
+            <td>Icecream</td>
+            <td>&#8377 100 <input type="checkbox"  name="snacks[]" value="Icecream" id="Icecream"></td>
+            <td><input type="number" id="icecream" min="0"></td>
+        </tr>
+        <tr>
+            <td>Donut</td>
+            <td>&#8377 70 <input type="checkbox"  name="snacks[]" value="Donut" id="Donut"></td>
+            <td><input type="number" id="donut" min="0"></td>
+        </tr>
+        <tr>
+            <td>French Fries</td>
+            <td>&#8377 145 <input type="checkbox" name="snacks[]" value="French_Fries" id="French_Fries"></td>
+            <td><input type="number" id="french_Fries" min="0"></td>
+        </tr>
+        <tr>
+            <td>Pastry</td>
+            <td>&#8377 85 <input type="checkbox" name="snacks[]" value="Pastry" id="Pastry"></td>
+            <td><input type="number" id="pastry" min="0"></td>
+        </tr>
+        <tr>
+            <td>Burger</td>
+            <td>&#8377 100 <input type="checkbox" name="snacks[]" value="Burger" id="Burger"></td>
+            <td><input type="number" id="burger" min="0"></td>
+        </tr>
+        <tr>
+            <td>Egg Noodles</td>
+            <td>&#8377 40 <input type="checkbox" name="snacks[]" value="eNoodles" id="Enoodles"></td>
+            <td><input type="number" id="enoodles" min="0"></td>
+        </tr>
+       
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>Total</th>
+            <td></td>
+            <td id="disp_total"></td>
+        </tr>
+    </table>
+    </div>
+    <br><br>
+     <button name="submit" class="submit">Confirm Order</button><br><br>
+</form>
+<button class="submit" onclick="find_total()" style="margin-left: 680px;">Display Total</button><br><br>
+    <input type="reset" onclick="reset()" class="reset">
+    </div>
+    </body> 
+    </html>
+        
+    
+ 

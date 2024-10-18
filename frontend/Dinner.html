@@ -1,0 +1,344 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" type="image/x-icon" href="https://i.etsystatic.com/11979725/r/il/425b9a/1431687786/il_570xN.1431687786_w5a8.jpg">
+        <title>Dinner-Scrummy Park</title>
+    </head>
+    <style>
+        .html {
+              font-size: 62.5%;
+            }
+
+        body {
+            font-family: "Poppins", sans-serif;
+        }
+        
+        .background{
+            background-image: url("https://images.pexels.com/photos/958506/pexels-photo-958506.jpeg?cs=srgb&dl=delicious-indian-cooking-indian-cuisine-958506.jpg&fm=jpg");
+            opacity: 100%;
+            background-repeat: no-repeat;
+            background-size: 120%;
+        }
+
+        .navbar{
+            box-shadow: 0px 5px 10px 0px #aaa;
+            overflow: hidden;
+            width: 100%;
+            background: #91dfc1;
+            color: #000;
+           
+            height: 50px;
+            font-size: 17px;
+        }
+
+        .navbar a{
+            padding: 13px;
+            color: black;
+            text-align: center;
+            text-decoration: none;
+            float: left;    
+        }
+
+        .menubar{
+            float: left;
+            overflow: hidden;
+        }
+
+        .ddlbtn{
+            font-size: 17px;  
+            border: none;
+            outline: none;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: "Poppins", sans-serif;
+            margin: 0;
+             color: #000;
+            opacity: 0.95;
+            
+        }
+
+        .navbar a:hover, .ddlbtn:hover{
+            background-color: black;
+            color: white;
+        } 
+
+        .ddl-items{
+            padding: 13px 16px;
+            background-color: #91dfc1;
+            display: none;
+            color: black;
+            font-family:  "Poppins", sans-serif;
+            position: absolute;
+            box-shadow: 0 10px 13px 0 rgba(0, 0, 0, 0.5);
+        }
+
+        .ddl-items a{
+            padding: 13px;
+            background-color: #91dfc1;
+            color: black;
+            text-align: center;
+            text-decoration: none;
+            float: left;
+        }
+
+        .ddl-items a:hover, .ddlbtn:hover{
+            color:white;
+            background-color: black;
+        }
+
+        .menubar:hover .ddl-items{
+            display: block;
+        }
+        .submit{
+                background-color: rgb(164, 164, 214);
+                color: black;
+                font-size: 20px;
+                padding: 7px;
+                font-family: italian;
+                border-radius: 3px;
+                margin-left: 680px;
+        }  
+        .reset{
+                background-color: rgb(164, 164, 214);
+                color: black;
+                font-size: 20px;
+                padding: 7px;
+                font-family: italian;
+                margin-left: 710px;
+                border-radius: 3px;
+        } 
+        .submit:hover{
+                background-color: rgb(164, 164, 214);
+                color: black;
+                transform: scale(1.2);
+                font-size: 20px;
+                padding: 7px;
+                font-family: italian;
+                border-radius: 3px;
+                margin-left: 680px;
+        }
+        .reset:hover{
+                background-color: rgb(164, 164, 214);
+                color: black;
+                transform: scale(1.2);
+                font-size: 20px;
+                padding: 7px;
+                font-family: italian;
+                margin-left: 710px;
+                border-radius: 3px;
+        }
+        table{
+               background-color: rgb(164, 164, 214);
+               margin-left: auto;
+               margin-right: auto;
+               margin-top: auto;
+        }
+        td{
+               font-family: Italian;
+               font-size: 25px;
+               color: rgb(14, 14, 14); 
+               padding: 3px;  
+               width: 20%;
+               text-align: center;               
+        }
+        th{
+               font-size: 30px;
+               color: rgb(112, 85, 85);
+        }
+        .name{
+                margin-left: auto;
+                margin-right: auto;
+                padding-top: 7px;
+                padding-bottom: 0.1px;
+                color: black;
+                background-color: rgb(164,164,214);
+                text-align: center;
+                border: 2.5px;
+                border-radius: 4px;
+                width: 300px;
+        } 
+    </style>
+    <body>
+    <script>
+        function find_total(){
+            var dinner_total = 0;
+            var idly = document.getElementById("Idly");
+            var dosa = document.getElementById("Dosa");
+            var chappathi = document.getElementById("Poori");
+            var poori = document.getElementById("Chappathi");
+            var parotta = document.getElementById("Parotta");
+            var cfry = document.getElementById("Cfry");
+            var mfry = document.getElementById("Mfry");
+            var cnoodles = document.getElementById("CNoodles");
+            var enoodles = document.getElementById("ENoodles");
+
+            if(Idly.checked == true){
+                dinner_total += 10*(document.getElementById("idly").value);
+            }
+            if(Dosa.checked == true){
+                dinner_total += 20*(document.getElementById("dosa").value);
+            }
+            if(Poori.checked == true){
+                dinner_total += 30*(document.getElementById("poori").value);
+            }
+            if(Chappathi.checked == true){
+                dinner_total += 25*(document.getElementById("chappathi").value);
+            }
+            if(Parotta.checked == true){
+                dinner_total += 20*(document.getElementById("parotta").value);
+            }
+            if(Cfry.checked == true){
+                dinner_total += 145*(document.getElementById("cfry").value);
+            }
+            if(Mfry.checked == true){
+                dinner_total += 155*(document.getElementById("mfry").value);
+            }
+            if(CNoodles.checked == true){
+                dinner_total += 100*(document.getElementById("cNoodles").value);
+            }
+            if(ENoodles.checked == true){
+                dinner_total += 80*(document.getElementById("eNoodles").value);
+            }
+            document.getElementById("disp_total").innerHTML = "&#8377 "+dinner_total;
+            localStorage.setItem("amount",dinner_total);
+        }
+
+        function reset(){
+            document.getElementById("idly").value = "";
+            document.getElementById("dosa").value = "";
+            document.getElementById("poori").value = "";
+            document.getElementById("chappathi").value = "";
+            document.getElementById("parotta").value = "";
+            document.getElementById("cfry").value = "";
+            document.getElementById("mfry").value = "";
+            document.getElementById("cNoodles").value = "";
+            document.getElementById("eNoodles").value = "";
+
+            document.getElementById("Idly").checked = false;
+            document.getElementById("Dosa").checked = false;
+            document.getElementById("Poori").checked = false;
+            document.getElementById("Chappathi").checked = false;
+            document.getElementById("Parotta").checked = false;
+            document.getElementById("Cfry").checked = false;
+            document.getElementById("Mfry").checked = false;
+            document.getElementById("CNoodles").checked = false;
+            document.getElementById("ENoodles").checked = false;
+             document.getElementById("disp_total").innerHTML="";
+            
+        }
+    </script>
+        <header>
+            <div class="navbar">
+                    <a href="Home.html">Home</a>
+                    <a href="About.html">About</a>
+                    <div class="menubar">
+                        <button class="ddlbtn">Cuisine</button>
+                            <div class="ddl-items">
+                                <a href="Chinese.html">Chinese</a><br><hr width="100%">
+                                <a href="Japanese.html">Japanese</a><br><hr width="100%">
+                                <a href="Korean.html">Korean</a><br><hr width="100%">
+                            </div>
+                    </div>
+                    <div class="menubar">
+                        <button class="ddlbtn">Menu Card</button>
+                            <div class="ddl-items">
+                                <a href="Breakfast.html">Breakfast</a><br><hr width="100%">
+                                <a href="Lunch.html">Lunch</a><br><hr width="100%">
+                                <a href="Snacks.html">Snacks</a><br><hr width="100%">
+                                <a href="Dinner.html">Dinner</a><br>
+                            </div>
+                    </div>
+                    <a href="Reservation.html">Table resevation</a><br>
+            </div>
+            </header>
+    </nav><br>
+    <div class="background"><br><br>
+        <img src="https://i.etsystatic.com/11979725/r/il/425b9a/1431687786/il_570xN.1431687786_w5a8.jpg" 
+        height="200px" style="border-radius: 50%;; display: block; margin-left: auto; margin-right: auto; height:15%;width: 17%;"> 
+        <br><br>
+    <div class= "tableBorder">
+        <form action="dinner1.php" method="POST">
+            <p class="name">Enter your name:
+                <input type="text" name="name" id="name" required><br><br></p>
+        
+    <table>
+        <tr>
+           
+            <td style="color: #000; text-decoration: underline;">Items</td>
+            <td style="color: #000;text-decoration: underline">Amount</td>
+            <td style="color: #000;text-decoration: underline">Quantity</td>
+        </tr>
+        <tr>
+            <th colspan="3"style="font-style: italic;">Dinner</th>
+        </tr>
+        <tr>
+            <td>Idly</td>
+            <td>&#8377 10 <input type="checkbox" value="idly" name="dinner[]"id="Idly"></td>
+            <td><input type="number" id="idly" min="0"></td>
+        </tr>
+        <tr>
+            <td>Dosa</td>
+            <td>&#8377 20 <input type="checkbox" value="dosa"  name="dinner[]" id="Dosa"></td>
+            <td><input type="number" id="dosa" min="0"></td>
+        </tr>
+        <tr>
+            <td>Poori (1 set)</td>
+            <td>&#8377 30 <input type="checkbox" value="poori"  name="dinner[]" id="Poori"></td>
+            <td><input type="number" id="poori" min="0"></td>
+        </tr>
+        <tr>
+            <td>Chappathi</td>
+            <td>&#8377 25 <input type="checkbox" value="chappathi"  name="dinner[]"id="Chappathi"></td>
+            <td><input type="number" id="chappathi" min="0"></td>
+        </tr>
+        <tr>
+            <td>Parotta</td>
+            <td>&#8377 20 <input type="checkbox" value="parotta"  name="dinner[]"id="Parotta"></td>
+            <td><input type="number" id="parotta" min="0"></td>
+        </tr>
+        <tr>
+            <td>Chicken Fry</td>
+            <td>&#8377 145 <input type="checkbox" value="cfry"  name="dinner[]"id="Cfry"></td>
+            <td><input type="number" id="cfry" min="0"></td>
+        </tr>
+        <tr>
+            <td>Mutton Fry</td>
+            <td>&#8377 155 <input type="checkbox" value="mfry"  name="dinner[]" id="Mfry"></td>
+            <td><input type="number" id="mfry" min="0"></td>
+        </tr>
+        <tr>
+            <td>Chicken Noodles</td>
+            <td>&#8377 100 <input type="checkbox" value="cNoodles" name="dinner[]" id="CNoodles"></td>
+            <td><input type="number" id="cNoodles" min="0"></td>
+        </tr>
+        <tr>
+            <td>Egg Noodles</td>
+            <td>&#8377 80 <input type="checkbox" value="eNoodles"  name="dinner[]"id="ENoodles"></td>
+            <td><input type="number" id="eNoodles" min="0"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>Total</th>
+            <td></td>
+            <td id="disp_total"></td>
+        </tr>
+    </table>
+    </div>
+    <br><br><br>
+    <button name="submit"class="submit">Confirm Order</button><br><br>
+</form>
+<button class="submit" onclick="find_total()" style="margin-left: 680px;">Display Total</button><br><br>
+    <input type="reset" onclick="reset()" class="reset">
+    </div>
+    </body> 
+    </html>
+        
+    
+ 

@@ -1,0 +1,336 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" type="image/x-icon" href="https://i.etsystatic.com/11979725/r/il/425b9a/1431687786/il_570xN.1431687786_w5a8.jpg">
+        <title>Japanese-Scrummy Park</title>
+    </head>
+    <style>
+        .html {
+              font-size: 62.5%;
+            }
+
+        body {
+            font-family: "Poppins", sans-serif;
+        }
+        
+        .background{
+            background-image: url("https://rs-menus-api.roocdn.com/images/1d1a9f6c-45b2-45d6-9902-bbd1eb2c9204/image.jpeg?width=1200&height=630&fit=crop");
+            opacity: 100%;
+            background-repeat: no-repeat;
+            background-size: 120%;
+        }
+
+        .navbar{
+            box-shadow: 0px 5px 10px 0px #aaa;
+            overflow: hidden;
+            width: 100%;
+            background: #91dfc1;
+            color: #000;
+           
+            height: 50px;
+            font-size: 17px;
+        }
+
+        .navbar a{
+            padding: 13px;
+            color: black;
+            text-align: center;
+            text-decoration: none;
+            float: left;    
+        }
+
+        .menubar{
+            float: left;
+            overflow: hidden;
+        }
+
+        .ddlbtn{
+            font-size: 17px;  
+            border: none;
+            outline: none;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: "Poppins", sans-serif;
+            margin: 0;
+             color: #000;
+            opacity: 0.95;
+            
+        }
+
+        .navbar a:hover, .ddlbtn:hover{
+            background-color: black;
+            color: white;
+        } 
+
+        .ddl-items{
+            padding: 13px 16px;
+            background-color: #91dfc1;
+            display: none;
+            color: black;
+            font-family:  "Poppins", sans-serif;
+            position: absolute;
+            box-shadow: 0 10px 13px 0 rgba(0, 0, 0, 0.5);
+        }
+
+        .ddl-items a{
+            padding: 13px;
+            background-color: #91dfc1;
+            color: black;
+            text-align: center;
+            text-decoration: none;
+            float: left;
+        }
+
+        .ddl-items a:hover, .ddlbtn:hover{
+            color:white;
+            background-color: black;
+        }
+
+        .menubar:hover .ddl-items{
+            display: block;
+        }
+        
+         .submit{
+                background-color: rgb(164, 164, 214);
+                color: black;
+                font-size: 20px;
+                padding: 7px;
+                font-family: italian;
+                border-radius: 3px;
+                margin-left: 680px;
+        }  
+        .reset{
+                background-color: rgb(164, 164, 214);
+                color: black;
+                font-size: 20px;
+                padding: 7px;
+                font-family: italian;
+                margin-left: 710px;
+                border-radius: 3px;
+        } 
+        .submit:hover{
+                background-color: rgb(164, 164, 214);
+                color: black;
+                transform: scale(1.2);
+                font-size: 20px;
+                padding: 7px;
+                font-family: italian;
+                border-radius: 3px;
+                margin-left: 680px;
+        }
+        .reset:hover{
+                background-color: rgb(164, 164, 214);
+                color: black;
+                transform: scale(1.2);
+                font-size: 20px;
+                padding: 7px;
+                font-family: italian;
+                margin-left: 710px;
+                border-radius: 3px;
+        }
+           
+        table{
+               background-color: rgba(164, 164, 214);
+               margin-left: auto;
+               margin-right: auto;
+               margin-top: auto;
+        }
+        td{
+               font-family: Italian;
+               font-size: 25px;
+               color: rgb(14, 14, 14); 
+               padding: 3px;  
+               width: 20%;
+               text-align: center;               
+        }
+        th{
+               font-size: 30px;
+               color: rgb(112, 85, 85);
+        }
+        .name{
+                margin-left: auto;
+                margin-right: auto;
+                padding-top: 7px;
+                padding-bottom: 0.1px;
+                color: black;
+                background-color: rgb(164,164,214);
+                text-align: center;
+                border: 2.5px;
+                border-radius: 4px;
+                width: 300px;
+        } 
+    </style>
+    
+    <body>
+        <script>
+        function find_total(){
+            var japanese_total = 0;
+            var Natto_Maki = document.getElementById("Natto_Maki");
+            var Oshinko_Maki= document.getElementById("Oshinko_Maki");
+            var Chirashi_Don = document.getElementById("Chirashi_Don");
+            var Kappa_Maki = document.getElementById("Kappa_Maki");
+            var Kani_Maki = document.getElementById("Kani_Maki");
+            var Kani_Kyu_Maki= document.getElementById("Kani_Kyu_Maki");
+            var Spider_Roll = document.getElementById("Spider_Roll");
+            var Akita_Roll = document.getElementById("Akita_Roll");
+            
+            if(Natto_Maki.checked == true){
+                japanese_total += 250*(document.getElementById("natto_Maki").value);
+            }
+            if(Oshinko_Maki.checked == true){
+                japanese_total += 250*(document.getElementById("oshinko_Maki").value);
+            }
+            if(Chirashi_Don.checked == true){
+                japanese_total += 900*(document.getElementById("chirashi_Don").value);
+            }
+            if(Kappa_Maki.checked == true){
+                japanese_total += 250*(document.getElementById("kappa_Maki").value);
+            }
+            if(Kani_Maki.checked == true){
+                japanese_total += 375*(document.getElementById("kani_Maki").value);
+            }
+            if(Kani_Kyu_Maki.checked == true){
+                japanese_total += 325*(document.getElementById("kani_Kyu_Maki").value);
+            }
+             if(Spider_Roll.checked == true){
+                japanese_total += 855*(document.getElementById("spider_Roll").value);
+            }
+             if(Akita_Roll.checked == true){
+                japanese_total += 700*(document.getElementById("akita_Roll").value);
+            }
+            document.getElementById("disp_total").innerHTML = "&#8377 "+japanese_total;
+            localStorage.setItem("amount",japanese_total);
+        }
+
+        function reset(){
+            document.getElementById("natto_Maki").value = "";
+            document.getElementById("oshinko_Maki").value = "";
+            document.getElementById("chirashi_Don").value = "";
+            document.getElementById("kappa_Maki").value = "";
+            document.getElementById("kani_Maki").value = "";
+            document.getElementById("chirashi_Dony").value = "";
+            document.getElementById("kani_Kyu_Maki").value = "";
+            document.getElementById("spider_Roll").value = "";
+            document.getElementById("akita_Roll").value = "";
+
+            document.getElementById("Natto_Maki").checked = false;
+            document.getElementById("Oshinko_Maki").checked = false;
+            document.getElementById("Chirashi_Don").checked = false;
+            document.getElementById("Kappa_Maki").checked = false;
+            document.getElementById("Kani_Maki").checked = false;
+            document.getElementById("Chirashi_Dony").checked = false;
+            document.getElementById("Kani_Kyu_Maki").checked = false;
+            document.getElementById("Spider_Roll").checked = false;
+            document.getElementById("Akita_Roll").checked = false;
+            document.getElementById("disp_total").innerHTML="";   
+        }
+    </script>
+        <header>
+            <div class="navbar">
+                    <a href="Home.html">Home</a>
+                    <a href="About.html">About</a>
+                    <div class="menubar">
+                        <button class="ddlbtn">Cuisine</button>
+                            <div class="ddl-items">
+                                <a href="Chinese.html">Chinese</a><br><hr width="100%">
+                                <a href="Japanese.html">Japanese</a><br><hr width="100%">
+                                <a href="Korean.html">Korean</a><br><hr width="100%">
+                            </div>
+                    </div>
+                    <div class="menubar">
+                        <button class="ddlbtn">Menu Card</button>
+                            <div class="ddl-items">
+                                <a href="Breakfast.html">Breakfast</a><br><hr width="100%">
+                                <a href="Lunch.html">Lunch</a><br><hr width="100%">
+                                <a href="Snacks.html">Snacks</a><br><hr width="100%">
+                                <a href="Dinner.html">Dinner</a><br>
+                            </div>
+                    </div>
+                    <a href="Reservation.html">Table resevation</a><br>
+            </div>
+            </header>
+    </nav><br>
+    <div class="background"><br><br>
+        <img src="https://i.etsystatic.com/11979725/r/il/425b9a/1431687786/il_570xN.1431687786_w5a8.jpg" 
+        height="200px" style="border-radius: 50%;; display: block; margin-left: auto; margin-right: auto; height:15%;width: 17%;"> 
+        <br><br>
+    <div class= "tableBorder">
+        <form action="japanese1.php" method="POST">
+            <p class="name">Enter your name:
+                <input type="text" name="name" id="name" required><br><br></p>
+    <table>
+        <tr>
+           
+            <td style="color: #000; text-decoration: underline;">Items</td>
+            <td style="color: #000;text-decoration: underline">Amount</td>
+            <td style="color: #000;text-decoration: underline">Quantity</td>
+        </tr>
+        <tr>
+            <th colspan="3"style="font-style: italic;">Japanese Cuisine</th>
+        </tr>
+        <tr>
+            <td>Natto Maki 6 pcs</td>
+            <td>&#8377 250 <input type="checkbox" value="Natto Maki" name="japan[]"id="Natto_Maki"></td>
+            <td><input type="number" id="natto_Maki" min="0"></td>
+        </tr>
+        <tr>
+            <td>Oshinko Maki</td>
+            <td>&#8377 250 <input type="checkbox" value="Oshinko_Maki"  name="japan[]"id="Oshinko_Maki"></td>
+            <td><input type="number" id="oshinko_Maki" min="0"></td>
+        </tr>
+        <tr>
+            <td>Kappa Maki </td>
+            <td>&#8377 250 <input type="checkbox" value="Kappa_Maki"  name="japan[]"id="Kappa_Maki"></td>
+            <td><input type="number" id="kappa_Maki" min="0"></td>
+        </tr>
+        <tr>
+            <td>Kani Maki</td>
+            <td>&#8377 375 <input type="checkbox" value="Kani Maki"  name="japan[]"id="Kani_Maki"></td>
+            <td><input type="number" id="kani_Maki" min="0"></td>
+        </tr>
+        <tr>
+            <td>Kani Kyu Maki</td>
+            <td>&#8377 325 <input type="checkbox" value="Kani Kyu Maki" name="japan[]" id="Kani_Kyu_Maki"></td>
+            <td><input type="number" id="kani_Kyu_Maki" min="0"></td>
+        </tr>
+        <tr>
+            <td>Spider Roll</td>
+            <td>&#8377 855 <input type="checkbox" value="Spider Roll" name="japan[]" id="Spider_Roll"></td>
+            <td><input type="number" id="spider_Roll" min="0"></td>
+        </tr>
+        <tr>
+            <td>Akita Roll</td>
+            <td>&#8377 700 <input type="checkbox" value="Akita Roll"  name="japan[]"id="Akita_Roll"></td>
+            <td><input type="number" id="akita_Roll" min="0"></td>
+        </tr>
+        <tr>
+            <td>Chirashi Don</td>
+            <td>&#8377 900 <input type="checkbox" value="Chirashi Don"  name="japan[]"id="Chirashi_Don"></td>
+            <td><input type="number" id="chirashi_Don" min="0"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>Total</th>
+            <td></td>
+            <td id="disp_total"></td>
+        </tr>
+    </table>
+    </div>
+    <br><br><br>
+     <button name="submit" class="submit">Confirm Order</button><br><br>
+</form>
+<button class="submit" onclick="find_total()" style="margin-left: 680px;">Display Total</button><br><br>
+    <input type="reset" onclick="reset()" class="reset">
+    </div>
+    </body> 
+    </html>
+        
+    
+ 

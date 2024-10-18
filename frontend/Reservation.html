@@ -1,0 +1,308 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" type="image/x-icon" href="https://i.etsystatic.com/11979725/r/il/425b9a/1431687786/il_570xN.1431687786_w5a8.jpg">
+        <title>The Scrummy Park</title>
+    </head>
+    <style>
+        .html {
+              font-size: 62.5%;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,230,45,0.8935223747702206) 100%);
+        }
+        .navbar{
+            box-shadow: 0px 5px 10px 0px #0e0d0d;
+            overflow: hidden;
+            width: 100%;
+            background: #88dbbb;
+            color: #000;
+            opacity: 0.85;
+            height: 50px;
+            font-size: 17px;
+        }
+
+        .navbar a{
+            padding: 13px;
+            color: black;
+            text-align: center;
+            text-decoration: none;
+            float: left;
+            transition: .2s;    
+        }
+
+        .menubar{
+            float: left;
+            overflow: hidden;
+        }
+
+        .ddlbtn{
+            font-size: 17px;  
+            border: none;
+            outline: none;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: "Poppins", sans-serif;
+            margin: 0;
+            color: #000;
+            opacity: 1;
+            transition: .2s;
+        }
+
+        .navbar a:hover, .ddlbtn:hover{
+            color: white;
+            background-color: black;
+        } 
+
+        .ddl-items{
+            padding: 13px 16px;
+            background-color: #7eebc1;
+            display: none;
+            color: black;
+            font-family:  "Poppins", sans-serif;
+            position: absolute;
+            box-shadow: 0 10px 13px 0 rgba(0, 0, 0, 0.5);
+        }
+
+        .ddl-items a{
+            padding: 13px;
+            background-color: #91dfc1;
+            color: black;
+            text-align: center;
+            text-decoration: none;
+            float: left;
+            transition: .2s;
+        }
+
+        .ddl-items a:hover{
+            background-color: black;
+            color:white;
+        }
+
+        .menubar:hover .ddl-items{
+            display: block;
+        }
+        
+        .reservation{
+            margin-left: 500px;
+            margin-right: 590px;
+            border: 7px double black;
+            border-radius: 3px;
+        }
+        .Submit{
+            display: block; 
+            padding: 15px; 
+            background-color: black; 
+            color:white; 
+            margin-left: 670px; 
+            text-align: center;
+        }
+        ul {
+            list-style-type: none;
+        }
+
+        li {
+           display: inline-block;
+        }
+
+        input[type="checkbox"][id^="myCheckbox"] {
+            display: none;
+        }
+
+        label {
+            border: 1px solid #fff;
+            padding: 10px;
+            display: block;
+            position: relative;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        label:before {
+            background-color: white;
+            color: white;
+            content: "✓";
+            display: block;
+            border-radius: 50%;
+            border: 1px solid grey;
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            width: 25px;
+            height: 25px;
+            text-align: center;
+            line-height: 28px;
+            transition-duration: 0.4s;
+            transform: scale(0);
+        }
+
+        label img {
+            height: 100px;
+            width: 100px;
+            transition-duration: 0.2s;
+            transform-origin: 50% 50%;
+        }
+
+        :checked + label {
+            border-color: #ddd;
+        }
+
+        :checked + label:before {
+            content: "✓";
+            background-color: grey;
+            transform: scale(1);
+            
+        }
+
+        :checked + label img {
+            transform: scale(0.9);
+            z-index: -1;
+        }
+        figcaption{
+            text-align: center;
+            font-family:"Poppins", sans-serif;
+            font-style:italic;
+            
+
+        }
+            .name{
+                margin-left: 37%;
+                margin-right: auto;
+                padding-top: 7px;
+                padding-bottom: 0.1px;
+                color: black;
+                background-color: rgb(166, 214, 164);
+                text-align: center;
+                border: 2.5px;
+                border-radius: 4px;
+                width: 300px;
+        } 
+        
+    </style>
+   
+    <body>
+    <script>
+        function show_table(){
+
+            var total_no_of_tables = 0;
+            var Table_num_1 = document.getElementById("myCheckbox1");
+            var Table_num_2 = document.getElementById("myCheckbox2");
+            var Table_num_3 = document.getElementById("myCheckbox3");
+            var Table_num_4 = document.getElementById("myCheckbox4");
+            var Table_num_5 = document.getElementById("myCheckbox5");
+            var Table_num_6 = document.getElementById("myCheckbox6");
+
+            if (Table_num_1.checked == true){
+                total_no_of_tables += 1;
+            }
+            if (Table_num_2.checked == true){
+                total_no_of_tables += 1;
+            }
+            if (Table_num_3.checked == true){
+                total_no_of_tables += 1;
+            }
+            if (Table_num_4.checked == true){
+                total_no_of_tables += 1;
+            }
+            if (Table_num_5.checked == true){
+                total_no_of_tables += 1;
+            }
+            if (Table_num_6.checked == true){
+                total_no_of_tables += 1;
+            }
+            document.getElementById("no_of_tables").innerHTML = "You have selected "+total_no_of_tables+" Tables. Enjoy your meals."
+            window.onload = refresh();
+        }
+        function refresh(){
+
+            var Table_num_1 = document.getElementById("myCheckbox1");
+            var Table_num_2 = document.getElementById("myCheckbox2");
+            var Table_num_3 = document.getElementById("myCheckbox3");
+            var Table_num_4 = document.getElementById("myCheckbox4");
+            var Table_num_5 = document.getElementById("myCheckbox5");
+            var Table_num_6 = document.getElementById("myCheckbox6");
+
+            Table_num_1.checked = false;
+            Table_num_2.checked = false;
+            Table_num_3.checked = false;
+            Table_num_4.checked = false;
+            Table_num_5.checked = false;
+            Table_num_6.checked = false;
+        }
+    </script>
+    <header>
+    <div class="navbar">
+            <a href="Home.html">Home</a>
+            <a href="About.html">About</a>
+            <div class="menubar">
+                <button class="ddlbtn">Cuisine</button>
+                    <div class="ddl-items">
+                        <a href="Chinese.html">Chinese</a><br><hr width="100%">
+                        <a href="Japanese.html">Japanese</a><br><hr width="100%">
+                        <a href="Korean.html">Korean</a><br><hr width="100%">
+                        </div>
+                    </div>
+            <div class="menubar">
+                <button class="ddlbtn">Menu Card</button>
+                    <div class="ddl-items">
+                        <a href="Breakfast.html">Breakfast</a><br><hr width="100%">
+                        <a href="Lunch.html">Lunch</a><br><hr width="100%">
+                        <a href="Snacks.html">Snacks</a><br><hr width="100%">
+                        <a href="Dinner.html">Dinner</a><br>
+                    </div>
+            </div>
+            <a href="Reservation.html">Table resevation</a>
+    </div>
+    </header>
+    <br><br>
+    <h1 style="color: important; margin-left: 540px;">Reserve your Tables!</h1>
+    <br>
+    <form action="table.php" method="POST">
+    
+        <p class="name">Enter your name:
+        <input type="text" name="name" id="name" required><br><br></p>
+               <div class="reservation">
+        <ul>
+            <li>
+                <input type="checkbox" name ="data[]" value="2 seats" id="myCheckbox1">
+                <label for="myCheckbox1"><img src="https://img.freepik.com/premium-vector/dining-table-with-4-chairs-01_490615-206.jpg?w=740"><figcaption>2 Seats</figcaption></label>
+            </li>
+            <li>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</li>
+            <li>
+                <input type="checkbox" name ="data[]" value="2 seats"  id="myCheckbox2">
+                <label for="myCheckbox2"><img src="https://img.freepik.com/premium-vector/dining-table-with-4-chairs-01_490615-206.jpg?w=740"><figcaption>2 Seats</figcaption></label>
+            </li>
+            <br><br><br>
+            <li>
+                <input type="checkbox" name ="data[]" value ="4 seats" id="myCheckbox3">
+                <label for="myCheckbox3"><img src="https://img.freepik.com/premium-vector/dining-table-with-4-chairs-01_490615-206.jpg?w=740"><figcaption>4 Seats</figcaption></label>
+            </li>
+            <li>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</li>
+            <li>
+                <input type="checkbox" name ="data[]" value="4 seats" id="myCheckbox4">
+                <label for="myCheckbox4"><img src="https://img.freepik.com/premium-vector/dining-table-with-4-chairs-01_490615-206.jpg?w=740"><figcaption>4 Seats</figcaption></label>
+            </li>
+            <br><br><br>
+            <li>
+                <input type="checkbox" name ="data[]" value="6 seats" id="myCheckbox5">
+                <label for="myCheckbox5"><img src="https://img.freepik.com/premium-vector/dining-table-with-4-chairs-01_490615-206.jpg?w=740"><figcaption>6 Seats</figcaption></label>
+            </li>
+            <li>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</li>
+            <li>
+                <input type="checkbox" name ="data[]" value="8 seats"  id="myCheckbox6">
+                <label for="myCheckbox6"><img src="https://img.freepik.com/premium-vector/dining-table-with-4-chairs-01_490615-206.jpg?w=740"><figcaption>8 Seats</figcaption></label>
+            </li>
+            <li>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</li>
+            <li id="no_of_tables"></li>
+        </ul>
+    </div><br><br>
+    <button class="Submit" name="submit" type="submit"><i style="font-size: 17px;">Book Tables</i></button><br><br>
+    </form>
+    <a href="Payment.html" ><button class="Submit" style="margin-left: 640px; text-decoration: none;"><i style="font-size: 17px;">Go to Payment Page</i></button></a><br>
+    </body>
+</html>

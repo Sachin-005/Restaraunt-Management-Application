@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/x-icon" href="https://i.etsystatic.com/11979725/r/il/425b9a/1431687786/il_570xN.1431687786_w5a8.jpg">
+		<title>The Scrummy Park-Sign up</title>
+		<style>
+body{
+    background-color:white;
+	background-image: url('https://i.postimg.cc/wT3TQS3V/header-image2.jpg');
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+
+
+.scrummy
+        {
+          font-family:"Poppins", sans-serif;
+          margin-left:550px;
+          margin-right:450px;
+          margin-top:25px;
+          padding:10px;
+          color:black;
+          background-color: rgb(222, 213, 213);
+          border:solid 3px;
+          border-color:black;
+          border-radius: 25px;
+        }
+.heading
+        {
+         font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+ h1
+   {
+    text-align: center;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding:5px;
+    color:black;
+	text-decoration: underline;
+
+    }
+	mark{
+		background-color:yellow;
+	}
+		</style>
+
+	</head>
+	      <body>
+		    <mark> <h1>Sign Up Now!!</h1></mark>
+    <div class="scrummy">
+		<form action="connect.php" method="POST0" autocomplete="off">
+            
+			
+			<label for="firstName"class="heading">Enter Firstname</label><br><br>
+			<input type="text" name="firstName" id="firstName" placeholder="FirstName" required><br>
+			<br>
+			<label for="lastname"class="heading">Enter Lastname</label><br><br>
+			<input type="text" name="lastName" id="lastName"placeholder="LastName" required><br>
+			<br>
+			<label for="gender"class="heading">Enter Gender:</label><br><br>
+                  <input type="radio" name="gender" value="m" id="Male">
+                  <label for="gender">Male</label> <br>
+                  <input type="radio" name="gender" value="f" id="Female">
+                  <label for="gender">Female</label><br>
+				  <input type="radio" name="gender" value="o" id="Others">
+				  <label for="gender">Others</label><br><br>
+			<label for="email"class="heading">Enter email address</label><br><br>
+			<input type="email" name="email" id="email" placeholder="Email" required><br><br>
+			<label for="password"class="heading">Enter Password</label><br><br>
+			<input type="password" name="password" id="password" placeholder="Password" required><br><br>
+			<label for="number"class="heading">Enter Phone number</label><br><br>
+			<input type="number" name="number" id="number" placeholder="Phone number" required><br><br>
+            <input type="Submit">
+			<p class="heading">Already have an account?<br><br><a href="Login.html">Login</a></p>
+                  </div>
+            
+		</form>
+        
+
+	</body>
+</html>

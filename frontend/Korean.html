@@ -1,0 +1,348 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" type="image/x-icon" href="https://i.etsystatic.com/11979725/r/il/425b9a/1431687786/il_570xN.1431687786_w5a8.jpg">
+        <title>Korean-Srummy Park</title>
+    </head>
+    <style>
+        .html {
+              font-size: 62.5%;
+            }
+
+        body {
+            font-family: "Poppins", sans-serif;
+        }
+        
+        .background{
+            background-image: url("https://www.wallpaperup.com/uploads/wallpapers/2014/11/10/512764/4d7c4a1caf71b59633e517c0b94c00fa.jpg");
+            opacity: 100%;
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+
+        .navbar{
+            box-shadow: 0px 5px 10px 0px #aaa;
+            overflow: hidden;
+            width: 100%;
+            background: #91dfc1;
+            color: #000;
+           
+            height: 50px;
+            font-size: 17px;
+        }
+
+        .navbar a{
+            padding: 13px;
+            color: black;
+            text-align: center;
+            text-decoration: none;
+            float: left;    
+        }
+
+        .menubar{
+            float: left;
+            overflow: hidden;
+        }
+
+        .ddlbtn{
+            font-size: 17px;  
+            border: none;
+            outline: none;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: "Poppins", sans-serif;
+            margin: 0;
+             color: #000;
+            opacity: 0.95;
+            
+        }
+
+        .navbar a:hover, .ddlbtn:hover{
+            background-color: black;
+            color: white;
+        } 
+
+        .ddl-items{
+            padding: 13px 16px;
+            background-color: #91dfc1;
+            display: none;
+            color: black;
+            font-family:  "Poppins", sans-serif;
+            position: absolute;
+            box-shadow: 0 10px 13px 0 rgba(0, 0, 0, 0.5);
+        }
+
+        .ddl-items a{
+            padding: 13px;
+            background-color: #91dfc1;
+            color: black;
+            text-align: center;
+            text-decoration: none;
+            float: left;
+        }
+
+        .ddl-items a:hover, .ddlbtn:hover{
+            color:white;
+            background-color: black;
+        }
+
+        .menubar:hover .ddl-items{
+            display: block;
+        }
+
+         .submit{
+                background-color: rgb(164, 164, 214);
+                color: black;
+                font-size: 20px;
+                padding: 7px;
+                font-family: italian;
+                border-radius: 3px;
+                margin-left: 680px;
+        }  
+        .reset{
+                background-color: rgb(164, 164, 214);
+                color: black;
+                font-size: 20px;
+                padding: 7px;
+                font-family: italian;
+                margin-left: 710px;
+                border-radius: 3px;
+        } 
+        .submit:hover{
+                background-color: rgb(164, 164, 214);
+                color: black;
+                transform: scale(1.2);
+                font-size: 20px;
+                padding: 7px;
+                font-family: italian;
+                border-radius: 3px;
+                margin-left: 680px;
+        }
+        .reset:hover{
+                background-color: rgb(164, 164, 214);
+                color: black;
+                transform: scale(1.2);
+                font-size: 20px;
+                padding: 7px;
+                font-family: italian;
+                margin-left: 710px;
+                border-radius: 3px;
+        }
+           
+        table{
+               background-color: rgb(164, 164, 214);
+               margin-left: auto;
+               margin-right: auto;
+               margin-top: auto;
+        }
+        td{
+               font-family: Italian;
+               font-size: 25px;
+               color: rgb(14, 14, 14); 
+               padding: 3px;  
+               width: 20%;
+               text-align: center;               
+        }
+        th{
+               font-size: 30px;
+               color: rgb(112, 85, 85);
+               
+        }
+        .name{
+                margin-left: auto;
+                margin-right: auto;
+                padding-top: 7px;
+                padding-bottom: 0.1px;
+                color: black;
+                background-color: rgb(164,164,214);
+                text-align: center;
+                border: 2.5px;
+                border-radius: 4px;
+                width: 300px;
+        }   
+    </style>
+        
+    <body>
+        <script>
+        function find_total(){
+            var korean_total = 0;
+            var Kimchi_Jigae = document.getElementById("Kimchi_Jigae");
+            var Doenjang_Jigae= document.getElementById("Doenjang_Jigae");
+            var Soondubu_Jigae = document.getElementById("Soondubu_Jigae");
+            var Sullong_Tong = document.getElementById("Sullong_Tong");
+            var Bibim_Bap = document.getElementById("Bibim_Bap");
+            var Jabche_Bap= document.getElementById("Jabche_Bap");
+            var Nakji_Bakum = document.getElementById("Nakji_Bakum");
+            var Haemul_Jim = document.getElementById("Haemul_Jim");
+            var Osambulgogi = document.getElementById("Osambulgogi");
+            
+            if(Kimchi_Jigae.checked == true){
+                korean_total += 250*(document.getElementById("kimchi_Jigae").value);
+            }
+            if(Doenjang_Jigae.checked == true){
+                korean_total += 250*(document.getElementById("doenjang_Jigae").value);
+            }
+            if(Soondubu_Jigae.checked == true){
+                korean_total += 250*(document.getElementById("soondubu_Jigae").value);
+            }
+            if(Sullong_Tong.checked == true){
+                korean_total += 375*(document.getElementById("sullong_Tong").value);
+            }
+            if(Bibim_Bap.checked == true){
+                korean_total += 325*(document.getElementById("bibim_Bap").value);
+            }
+            if(Jabche_Bap.checked == true){
+                korean_total += 645*(document.getElementById("jabche_Bap").value);
+            }
+             if(Nakji_Bakum.checked == true){
+                korean_total += 1155*(document.getElementById("nakji_Bakum").value);
+            }
+             if(Haemul_Jim.checked == true){
+                korean_total += 700*(document.getElementById("haemul_Jim").value);
+            }
+            if(Osambulgogi.checked == true){
+                korean_total += 900*(document.getElementById("osambulgogi").value);
+            }
+            document.getElementById("disp_total").innerHTML = "&#8377 "+total;
+            localStorage.setItem("amount",korean_total);
+        }
+
+        function reset(){
+            document.getElementById("kimchi_Jigae").value = "";
+            document.getElementById("doenjang_Jigae").value = "";
+            document.getElementById("soondubu_Jigae").value = "";
+            document.getElementById("sullong_Tong").value = "";
+            document.getElementById("bibim_Bap").value = "";
+            document.getElementById("soondubu_Jigae").value = "";
+            document.getElementById("jabche_Bap").value = "";
+            document.getElementById("nakji_Bakum").value = "";
+            document.getElementById("haemul_Jim").value = "";
+            document.getElementById("osambulgogi").value = "";
+
+            document.getElementById("Kimchi_Jigae").checked = false;
+            document.getElementById("Doenjang_Jigae").checked = false;
+            document.getElementById("Soondubu_Jigae").checked = false;
+            document.getElementById("Sullong_Tong").checked = false;
+            document.getElementById("Bibim_Bap").checked = false;
+            document.getElementById("Soondubu_Jigae").checked = false;
+            document.getElementById("Jabche_Bap").checked = false;
+            document.getElementById("Nakji_Bakum").checked = false;
+            document.getElementById("Haemul_Jim").checked = false;
+            document.getElementById("Osambulgogi").checked = false;
+            document.getElementById("disp_total").innerHTML="";
+            
+        }
+    </script>
+        <header>
+            <div class="navbar">
+                    <a href="Scrummy Park Main page.html">Home</a>
+                    <a href="#about">About</a>
+                    <div class="menubar">
+                        <button class="ddlbtn">Cuisine</button>
+                            <div class="ddl-items">
+                                <a href="Chinese.html">Chinese</a><br><hr width="100%">
+                                <a href="Japanese.html">Japanese</a><br><hr width="100%">
+                                <a href="Korean.html">Korean</a><br><hr width="100%">
+                            </div>
+                    </div>
+                    <div class="menubar">
+                        <button class="ddlbtn">Menu Card</button>
+                            <div class="ddl-items">
+                                <a href="Breakfast.html">Breakfast</a><br><hr width="100%">
+                                <a href="Lunch.html">Lunch</a><br><hr width="100%">
+                                <a href="Snacks.html">Snacks</a><br><hr width="100%">
+                                <a href="Dinner.html">Dinner</a><br>
+                            </div>
+                    </div>
+                    <a href="Reservation.html">Table resevation</a><br>
+            </div>
+            </header>
+    </nav><br>
+    <div class="background"><br><br>
+        <img src="https://i.etsystatic.com/11979725/r/il/425b9a/1431687786/il_570xN.1431687786_w5a8.jpg" 
+        height="200px" style="border-radius: 50%;; display: block; margin-left: auto; margin-right: auto; height:15%;width: 17%;"> 
+        <br><br>
+    <div class= "tableBorder">
+        <form action="korean1.php" method="POST">
+            <p class="name">Enter your name:
+                <input type="text" name="name" id="name" required><br><br></p>
+    <table>
+        <tr>
+            <td style="color: #000; text-decoration: underline;">Items</td>
+            <td style="color: #000;text-decoration: underline">Amount</td>
+            <td style="color: #000;text-decoration: underline">Quantity</td>
+        </tr>
+        <tr>
+            <th colspan="3"style="font-style: italic;">Korean Cuisine</th>
+        </tr>
+        <tr>
+            <td>Kimchi Jigae </td>
+            <td>&#8377 250 <input type="checkbox" value="Kimchi_Jigae" name="korea" id="Kimchi_Jigae"></td>
+            <td><input type="number" id="kimchi_Jigae" min="0"></td>
+        </tr>
+        <tr>
+            <td>Doenjang Jigae</td>
+            <td>&#8377 250 <input type="checkbox"  value="Kimchi Jigae" name="korea[]"id="Doenjang_Jigae"></td>
+            <td><input type="number" id="doenjang_Jigae" min="0"></td>
+        </tr>
+        <tr>
+            <td>Soondubu Jigae </td>
+            <td>&#8377 250 <input type="checkbox"  value="Soondubu Jigae" name="korea[]"id="Soondubu_Jigae"></td>
+            <td><input type="number" id="soondubu_Jigae" min="0"></td>
+        </tr>
+        <tr>
+            <td>Sullong Tong</td>
+            <td>&#8377 375 <input type="checkbox"  value="Sullong Tong" name="korea[]"id="Sullong_Tong"></td>
+            <td><input type="number" id="sullong_Tong" min="0"></td>
+        </tr>
+        <tr>
+            <td>Bibim Bap</td>
+            <td>&#8377 325 <input type="checkbox"  value="Bibim Bap" name="korea[]"id="Bibim_Bap"></td>
+            <td><input type="number" id="bibim_Bap" min="0"></td>
+        </tr>
+        <tr>
+            <td>Jabche Bap</td>
+            <td>&#8377 645 <input type="checkbox"  value="Jabche Bap" name="korea[]" id="Jabche_Bap"></td>
+            <td><input type="number" id="jabche_Bap" min="0"></td>
+        </tr>
+        <tr>
+            <td>Nakji Bakum</td>
+            <td>&#8377 1155 <input type="checkbox"  value="Nakji Bakum" name="korea[]" id="Nakji_Bakum"></td>
+            <td><input type="number" id="nakji_Bakum" min="0"></td>
+        </tr>
+        <tr>
+            <td>Haemul Jim</td>
+            <td>&#8377 700 <input type="checkbox"  value="Haemul Jim" name="korea[]" id="Haemul_Jim"></td>
+            <td><input type="number" id="haemul_Jim" min="0"></td>
+        </tr>
+        <tr>
+            <td>Osambulgogi</td>
+            <td>&#8377 900 <input type="checkbox"  value="Osambulgogi" name="korea[]" id="Osambulgogi"></td>
+            <td><input type="number" id="osambulgogi" min="0"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>Total</th>
+            <td></td>
+            <td id="disp_total"></td>
+        </tr>
+    </table>
+    </div>
+    <br><br><br>
+    <button name="submit" class="submit">Confirm Order</button><br><br>
+</form>
+<button class="submit" onclick="find_total()" style="margin-left: 680px;">Display Total</button><br><br>
+    <input type="reset" onclick="reset()" class="reset">
+    </div>
+    </body> 
+    </html>
+        
+    
+ 
